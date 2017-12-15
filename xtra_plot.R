@@ -1,18 +1,18 @@
 ## Plot data and results
 
-## Before: survey.csv, dls.txt (upload)
-## After:  dls.png (upload)
+## Before: survey.csv, dls.txt (report)
+## After:  dls.png (report)
 
 library(icesTAF)
 
-mkdir("upload/plot")
+mkdir("report")
 
 ## Get DLS data and results
-survey <- read.taf("upload/input/survey.csv")
-dls <- read.dls("upload/output/dls.txt")
+survey <- read.taf("data/survey.csv")
+dls <- read.dls("output/dls.txt")
 
 ## Plot
-png("upload/plot/dls.png", width=1200, height=1200, pointsize=24)
+png("report/dls.png", width=1200, height=1200, pointsize=24)
 xlim <- c(1990, 2016)
 ylim <- c(0, max(pretty(survey$Index)))
 plot(Index~Year, survey, type="b", lty=3, xlim=xlim, ylim=ylim, yaxs="i", las=1)
